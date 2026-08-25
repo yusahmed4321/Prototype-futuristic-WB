@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Cookie Vault — Set-Cookie Strip Spike (MV3)",
+  "version": "0.1.0",
+  "description": "MV3 variant of the strip spike. Loading this on Firefox 154 also confirms the design's key grounding fact: Firefox retains BLOCKING webRequest under Manifest V3 (Chrome does not).",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "spike-strip-mv3@cookievault.local",
+      "strict_min_version": "128.0"
+    }
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "cookies"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["strip.js", "background.js"]
+  }
+}

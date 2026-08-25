@@ -30,8 +30,9 @@ To be run on real target hardware per `README.md`. Record the outcome here:
 | Field | Value |
 |---|---|
 | Date | _(fill in)_ |
-| Machine / OS | _(e.g. Intel Mac, macOS 10.15.7)_ |
-| Firefox | _(about:support → version; expect ESR 115.x)_ |
+| Machine / OS | _(e.g. Intel Mac, macOS 10.15.x)_ |
+| Firefox | _(about:support → version; expect mainline 154.x — macOS 10.15 is mainline's minimum, NOT ESR 115)_ |
+| Manifest tested | _(MV2 `manifest.json` / MV3 `manifest.mv3.json`)_ |
 | Baseline (ext OFF): `sid` persisted? | _(expect YES)_ |
 | Ext ON: `sid` echoed by server on reload? | _(assumption holds → NO)_ |
 | Ext ON: `sid` in DevTools → Storage → Cookies? | _(assumption holds → NO)_ |
