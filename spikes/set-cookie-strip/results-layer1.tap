@@ -1,0 +1,88 @@
+TAP version 13
+# Subtest: integration: strip logic applied to a live HTTP response
+ok 1 - integration: strip logic applied to a live HTTP response
+  ---
+  duration_ms: 161.348247
+  type: 'test'
+  ...
+# Subtest: parse: extracts name/value and all attributes
+ok 2 - parse: extracts name/value and all attributes
+  ---
+  duration_ms: 2.950602
+  type: 'test'
+  ...
+# Subtest: parse: value containing "=" (JWT/base64) splits only on the first "="
+ok 3 - parse: value containing "=" (JWT/base64) splits only on the first "="
+  ---
+  duration_ms: 0.635664
+  type: 'test'
+  ...
+# Subtest: parse: malformed input returns null (no throw)
+ok 4 - parse: malformed input returns null (no throw)
+  ---
+  duration_ms: 0.485876
+  type: 'test'
+  ...
+# Subtest: policy: httponly vaults only HttpOnly cookies
+ok 5 - policy: httponly vaults only HttpOnly cookies
+  ---
+  duration_ms: 0.602502
+  type: 'test'
+  ...
+# Subtest: policy: "all" vaults every cookie
+ok 6 - policy: "all" vaults every cookie
+  ---
+  duration_ms: 0.501256
+  type: 'test'
+  ...
+# Subtest: strip: removes the HttpOnly Set-Cookie, keeps the rest, preserves order
+ok 7 - strip: removes the HttpOnly Set-Cookie, keeps the rest, preserves order
+  ---
+  duration_ms: 2.81557
+  type: 'test'
+  ...
+# Subtest: strip: case-insensitive on header name AND the HttpOnly attribute
+ok 8 - strip: case-insensitive on header name AND the HttpOnly attribute
+  ---
+  duration_ms: 0.546963
+  type: 'test'
+  ...
+# Subtest: strip: multiple HttpOnly cookies all removed, keeper survives
+ok 9 - strip: multiple HttpOnly cookies all removed, keeper survives
+  ---
+  duration_ms: 2.601125
+  type: 'test'
+  ...
+# Subtest: strip: empty / non-array input never throws
+ok 10 - strip: empty / non-array input never throws
+  ---
+  duration_ms: 1.105725
+  type: 'test'
+  ...
+# Subtest: strip: __Host- prefixed HttpOnly cookie is vaulted and parsed
+ok 11 - strip: __Host- prefixed HttpOnly cookie is vaulted and parsed
+  ---
+  duration_ms: 1.149215
+  type: 'test'
+  ...
+# Subtest: strip: never splits a Set-Cookie value on commas (Expires safety)
+ok 12 - strip: never splits a Set-Cookie value on commas (Expires safety)
+  ---
+  duration_ms: 0.67042
+  type: 'test'
+  ...
+# Subtest: strip: a non-HttpOnly cookie is left entirely in the browser
+ok 13 - strip: a non-HttpOnly cookie is left entirely in the browser
+  ---
+  duration_ms: 0.399787
+  type: 'test'
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 316.110152

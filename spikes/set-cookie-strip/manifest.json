@@ -1,0 +1,21 @@
+{
+  "manifest_version": 2,
+  "name": "Cookie Vault — Set-Cookie Strip Spike",
+  "version": "0.1.0",
+  "description": "Load-bearing spike (design spec V1): confirm that stripping HttpOnly Set-Cookie in webRequest.onHeadersReceived prevents the browser from persisting it on Firefox ESR 115.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "spike-strip@cookievault.local",
+      "strict_min_version": "115.0"
+    }
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "cookies",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["strip.js", "background.js"]
+  }
+}
